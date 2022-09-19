@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/curve.dir/main.cpp.o CMakeFiles/curve.dir/curve.cpp.o -o curve 
