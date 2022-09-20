@@ -1,6 +1,3 @@
-
-#include <string>
-#include <vector>
 namespace curves{
 class Point{
 private:
@@ -18,6 +15,7 @@ public:
 
   double distance(Point &point);
 };
+
 class Conchoid{
 private:
   double _a;

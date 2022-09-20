@@ -1,5 +1,6 @@
 #include <iostream>
 #include "curve.hpp"
+#include <gtest/gtest.h>
 
 curves::Conchoid newConchoid(){
 	std::cout << "Enter a and l for conchoid\n>";
@@ -8,7 +9,7 @@ curves::Conchoid newConchoid(){
 	return curves::Conchoid(a,l);
 }
 
-[[noreturn]] void menu(){
+void menu(){
 	char menu[] = "\
           [1] get a\n\
           [2] get l\n\
@@ -26,10 +27,10 @@ curves::Conchoid newConchoid(){
 		std::cin >> choice;
 		switch(choice){
 			case 1:
-				std::cout << conchoid.getA();
+				std::cout << conchoid.getA() << std::endl;
 				break;
 			case 2:
-				std::cout << conchoid.getL();
+				std::cout << conchoid.getL() << std::endl;
 				break;
 			case 3:
 				double newA;
@@ -45,7 +46,7 @@ curves::Conchoid newConchoid(){
 				double x;
 				std::cin>>x;
 				try{
-					std::cout << conchoid.yFromX(x);
+					std::cout << conchoid.yFromX(x) << std::endl;
 				}
 				catch(...){
 					std::cout << "Unlucky\n";
@@ -55,7 +56,7 @@ curves::Conchoid newConchoid(){
 				double phi;
 				std::cin >> phi;
 				try{
-					std::cout << conchoid.distanceFromCenter(phi);
+					std::cout << conchoid.distanceFromCenter(phi) << std::endl;
 				}
 				catch(...){
 					std::cout << "Unlucky\n";
@@ -63,7 +64,7 @@ curves::Conchoid newConchoid(){
 				break;
 			case 7:
 				try{
-					std::cout << conchoid.radiusOfCurvature();
+					std::cout << conchoid.radiusOfCurvature() << std::endl;
 				}
 				catch(...){
 					std::cout << "Unlucky\n";
@@ -71,7 +72,7 @@ curves::Conchoid newConchoid(){
 				break;
 			case 8:
 				try{
-					std::cout << conchoid.loopArea();
+					std::cout << conchoid.loopArea() << std::endl;
 				}
 				catch(...){
 					std::cout << "Unlucky\n";
@@ -80,10 +81,14 @@ curves::Conchoid newConchoid(){
 			case 9:
 				conchoid = newConchoid();
 				break;
+      case 0:
+        return;
 		}
 	}
 }
 int main(){
+  testing::InitGoogleTest();
+  RUN_ALL_TESTS(); 
 	menu();
 	return 0;
 }

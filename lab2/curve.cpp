@@ -1,5 +1,8 @@
 #include "curve.hpp"
 #include <cmath>
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
+
 namespace curves{
 
 	Point::Point(double x, double y){
@@ -128,3 +131,29 @@ namespace curves{
 		}
 	}
 }
+
+struct TestConchoid : testing::Test{
+  curves::Conchoid *c;
+  TestConchoid() {
+    c = new curves::Conchoid(2,5);
+  }
+  ~TestConchoid() {
+    delete c;
+  }
+};
+
+TEST_F(TestConchoid, yFromX){
+  EXPECT_DOUBLE_EQ(c->yFromX(1.3), 9.1942639616185904);
+  EXPECT_DOUBLE_EQ(c->yFromX(2.3), 38.264271121301206);
+  EXPECT_DOUBLE_EQ(c->yFromX(0.3), 0.82978714909473505);
+}
+TEST_F(TestConchoid, loopArea){
+  EXPECT_DOUBLE_EQ(c->loopArea(), 8.8591586667976188);
+}
+TEST_F(TestConchoid, radiusOfCurvature){
+  EXPECT_DOUBLE_EQ(c->radiusOfCurvature(), 2.2360679774997898);
+}
+TEST_F(TestConchoid, distanceFromCenter){
+  EXPECT_DOUBLE_EQ(c->distanceFromCenter(1.5), 800.40175307819607);
+}
+
