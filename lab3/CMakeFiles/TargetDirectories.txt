@@ -1,3 +1,0 @@
-/home/kali/jopa/stud/oop/lab3/CMakeFiles/test.dir
-/home/kali/jopa/stud/oop/lab3/CMakeFiles/edit_cache.dir
-/home/kali/jopa/stud/oop/lab3/CMakeFiles/rebuild_cache.dir
