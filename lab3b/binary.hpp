@@ -2,17 +2,19 @@
 #include <string>
 
 namespace binary{
-const int MAX=8;
 class Binary{
 private:
+  long int degree;
+
   std::string number;
-
-
   std::string toBinary(long int number);
   void addByIndex(int);
   Binary fromAdditionalCode();
-  int gtmod(Binary);
+  void stabalizeLength(Binary &, Binary &);
+  std::string numberWithoutSign();
+
 public:
+
   Binary();
   Binary(long);
   Binary(std::string);
@@ -29,3 +31,4 @@ public:
 };
 std::ostream& operator<<(std::ostream &out, binary::Binary i);
 }
+
