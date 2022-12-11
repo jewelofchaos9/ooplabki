@@ -1,0 +1,38 @@
+\hypertarget{classChessBoard}{}\doxysection{Chess\+Board Class Reference}
+\label{classChessBoard}\index{ChessBoard@{ChessBoard}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classChessBoard_ae625c4ca3d5e72823197971f0bbcb881}\label{classChessBoard_ae625c4ca3d5e72823197971f0bbcb881}} 
+{\bfseries Chess\+Board} (const \mbox{\hyperlink{classChessBoard}{Chess\+Board}} \&other)
+\item 
+\mbox{\Hypertarget{classChessBoard_a2faed083b1bc26c86e9528d5b3f80b3c}\label{classChessBoard_a2faed083b1bc26c86e9528d5b3f80b3c}} 
+\mbox{\hyperlink{classPiece}{Piece}} $\ast$ {\bfseries get\+Piece} (\mbox{\hyperlink{classPosition}{Position}} position)
+\item 
+\mbox{\Hypertarget{classChessBoard_a5c0a88de8e6cd4dc38715ac78a0d0bca}\label{classChessBoard_a5c0a88de8e6cd4dc38715ac78a0d0bca}} 
+std\+::vector$<$ \mbox{\hyperlink{classPiece}{Piece}} $\ast$ $>$ {\bfseries get\+Pieces} ()
+\item 
+\mbox{\Hypertarget{classChessBoard_a506fda98a6f40c8899afeaad82818822}\label{classChessBoard_a506fda98a6f40c8899afeaad82818822}} 
+\mbox{\hyperlink{classPosition}{Position}} {\bfseries get\+White\+King\+Position} ()
+\item 
+\mbox{\Hypertarget{classChessBoard_a362e4f7ae032f885b2d5540b70c19c56}\label{classChessBoard_a362e4f7ae032f885b2d5540b70c19c56}} 
+\mbox{\hyperlink{classPosition}{Position}} {\bfseries get\+Black\+King\+Position} ()
+\item 
+\mbox{\Hypertarget{classChessBoard_a5ebf011246e5fd84f9ba6ca9852789b4}\label{classChessBoard_a5ebf011246e5fd84f9ba6ca9852789b4}} 
+std\+::vector$<$ \mbox{\hyperlink{classPosition}{Position}} $>$ {\bfseries beam\+Search\+Threat} (\mbox{\hyperlink{classPosition}{Position}} start, int own\+\_\+color, int increment\+\_\+x, int increment\+\_\+y)
+\item 
+\mbox{\Hypertarget{classChessBoard_a440b964ae6d1f309943ba2045b226fd5}\label{classChessBoard_a440b964ae6d1f309943ba2045b226fd5}} 
+\mbox{\hyperlink{classPosition}{Position}} {\bfseries spot\+Search\+Threat} (\mbox{\hyperlink{classPosition}{Position}} start, int own\+\_\+color, int increment\+\_\+x, int increment\+\_\+y, bool threat\+\_\+only=false, bool free\+\_\+onle=false)
+\item 
+\mbox{\Hypertarget{classChessBoard_aec58783a66af6eb9a065dca6f70b55f6}\label{classChessBoard_aec58783a66af6eb9a065dca6f70b55f6}} 
+void {\bfseries execute\+Move} (\mbox{\hyperlink{classMoveCommand}{Move\+Command}} command)
+\item 
+\mbox{\Hypertarget{classChessBoard_a42719c21210fa433e0286b8e9a9eb690}\label{classChessBoard_a42719c21210fa433e0286b8e9a9eb690}} 
+void {\bfseries register\+King\+Position} (\mbox{\hyperlink{classPosition}{Position}}, int color)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+chessboard.\+h\item 
+chessboard.\+cpp\end{DoxyCompactItemize}

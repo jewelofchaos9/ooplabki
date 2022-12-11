@@ -1,0 +1,142 @@
+\hypertarget{piece_8h_source}{}\doxysection{piece.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}chessboard.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}movement.h"{}}}
+\DoxyCodeLine{6 \textcolor{keyword}{enum} colors\{}
+\DoxyCodeLine{7   BLACK, }
+\DoxyCodeLine{8   WHITE}
+\DoxyCodeLine{9 \};}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{enum} pieces\{}
+\DoxyCodeLine{12   KING,}
+\DoxyCodeLine{13   QUEEN, }
+\DoxyCodeLine{14   KNIGHT, }
+\DoxyCodeLine{15   ROOK,}
+\DoxyCodeLine{16   BISHOP, }
+\DoxyCodeLine{17   PAWN}
+\DoxyCodeLine{18 \};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classPiece}{Piece}}\{}
+\DoxyCodeLine{21 \textcolor{keyword}{private}:}
+\DoxyCodeLine{22   \mbox{\hyperlink{classPosition}{Position}} position;}
+\DoxyCodeLine{23   \textcolor{keywordtype}{int} color;}
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25   \mbox{\hyperlink{classPiece}{Piece}}()\{\}}
+\DoxyCodeLine{26   \mbox{\hyperlink{classPiece}{Piece}}(\mbox{\hyperlink{classPosition}{Position}} pos, \textcolor{keywordtype}{int} color);}
+\DoxyCodeLine{27   \mbox{\hyperlink{classPiece}{\string~Piece}}()\{\};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29   \mbox{\hyperlink{classPosition}{Position}} getPosition();}
+\DoxyCodeLine{30   \textcolor{keywordtype}{int} getColor();}
+\DoxyCodeLine{31   }
+\DoxyCodeLine{32   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} move(\mbox{\hyperlink{classPosition}{Position}} target);}
+\DoxyCodeLine{33   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} setBoardHandle(\mbox{\hyperlink{classChessBoard}{ChessBoard}} *board)\{\}}
+\DoxyCodeLine{34   \textcolor{keyword}{virtual} std::vector<Position> getTreathenedPositions(\mbox{\hyperlink{classChessBoard}{ChessBoard}} *board)=0;}
+\DoxyCodeLine{35   \textcolor{keyword}{virtual} std::vector<Position> getMovablePositions(\mbox{\hyperlink{classChessBoard}{ChessBoard}} *board)=0;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   std::string symbol();}
+\DoxyCodeLine{38   \textcolor{keyword}{virtual} std::string piece\_symbol()=0;}
+\DoxyCodeLine{39 \};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{class }\mbox{\hyperlink{classKing}{King}}: \textcolor{keyword}{public} \mbox{\hyperlink{classPiece}{Piece}}\{}
+\DoxyCodeLine{42 \textcolor{keyword}{private}:}
+\DoxyCodeLine{43   std::vector<Movement> SPOT\_INCREMENTS\{}
+\DoxyCodeLine{44     \mbox{\hyperlink{classMovement}{Movement}}(1,-\/1), \mbox{\hyperlink{classMovement}{Movement}}(1,0), \mbox{\hyperlink{classMovement}{Movement}}(1,1),}
+\DoxyCodeLine{45     \mbox{\hyperlink{classMovement}{Movement}}(0,1), \mbox{\hyperlink{classMovement}{Movement}}(-\/1,1), \mbox{\hyperlink{classMovement}{Movement}}(-\/1,0),}
+\DoxyCodeLine{46     \mbox{\hyperlink{classMovement}{Movement}}(-\/1,-\/1), \mbox{\hyperlink{classMovement}{Movement}}(0,-\/1)\};}
+\DoxyCodeLine{47     \mbox{\hyperlink{classChessBoard}{ChessBoard}} *board\_handle;}
+\DoxyCodeLine{48 \textcolor{keyword}{public}:}
+\DoxyCodeLine{49   \textcolor{keywordtype}{void} setBoardHandle(\mbox{\hyperlink{classChessBoard}{ChessBoard}} *) \textcolor{keyword}{override};}
+\DoxyCodeLine{50   \textcolor{keywordtype}{void} move(\mbox{\hyperlink{classPosition}{Position}} target) \textcolor{keyword}{override};}
+\DoxyCodeLine{51   std::vector<Position> getTreathenedPositions(\mbox{\hyperlink{classChessBoard}{ChessBoard}} *board) \textcolor{keyword}{override};}
+\DoxyCodeLine{52   std::vector<Position> getMovablePositions(\mbox{\hyperlink{classChessBoard}{ChessBoard}} *board) \textcolor{keyword}{override};}
+\DoxyCodeLine{53   std::string piece\_symbol() \textcolor{keyword}{override};}
+\DoxyCodeLine{54   \mbox{\hyperlink{classKing}{King}}(\mbox{\hyperlink{classPosition}{Position}} pos, \textcolor{keywordtype}{int} col) : \mbox{\hyperlink{classPiece}{Piece}}(pos, col)\{\};}
+\DoxyCodeLine{55   \mbox{\hyperlink{classKing}{\string~King}}()\{\}}
+\DoxyCodeLine{56 \};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{keyword}{class }\mbox{\hyperlink{classQueen}{Queen}}: \textcolor{keyword}{public} \mbox{\hyperlink{classPiece}{Piece}}\{}
+\DoxyCodeLine{59 \textcolor{keyword}{private}:}
+\DoxyCodeLine{60   std::vector<Movement> BEAM\_INCREMENTS\{}
+\DoxyCodeLine{61     \mbox{\hyperlink{classMovement}{Movement}}(1,-\/1), \mbox{\hyperlink{classMovement}{Movement}}(1,0), \mbox{\hyperlink{classMovement}{Movement}}(1,1),}
+\DoxyCodeLine{62     \mbox{\hyperlink{classMovement}{Movement}}(0,1), \mbox{\hyperlink{classMovement}{Movement}}(-\/1,1), \mbox{\hyperlink{classMovement}{Movement}}(-\/1,0),}
+\DoxyCodeLine{63     \mbox{\hyperlink{classMovement}{Movement}}(-\/1,-\/1), \mbox{\hyperlink{classMovement}{Movement}}(0,-\/1)\};}
+\DoxyCodeLine{64 \textcolor{keyword}{public}:}
+\DoxyCodeLine{65   \textcolor{keywordtype}{void} move(\mbox{\hyperlink{classPosition}{Position}} target)\textcolor{keyword}{ override }\{Piece::move(target);\};}
+\DoxyCodeLine{66   std::vector<Position> getTreathenedPositions(\mbox{\hyperlink{classChessBoard}{ChessBoard}} *board) \textcolor{keyword}{override};}
+\DoxyCodeLine{67   std::vector<Position> getMovablePositions(\mbox{\hyperlink{classChessBoard}{ChessBoard}} *board) \textcolor{keyword}{override};}
+\DoxyCodeLine{68   std::string piece\_symbol() \textcolor{keyword}{override};}
+\DoxyCodeLine{69   \mbox{\hyperlink{classQueen}{Queen}}(\mbox{\hyperlink{classPosition}{Position}} pos, \textcolor{keywordtype}{int} col) : \mbox{\hyperlink{classPiece}{Piece}}(pos, col)\{\};}
+\DoxyCodeLine{70   \mbox{\hyperlink{classQueen}{\string~Queen}}()\{\}}
+\DoxyCodeLine{71 \};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{keyword}{class }\mbox{\hyperlink{classKnight}{Knight}}: \textcolor{keyword}{public} \mbox{\hyperlink{classPiece}{Piece}}\{}
+\DoxyCodeLine{74 \textcolor{keyword}{private}:}
+\DoxyCodeLine{75   std::vector<Movement> SPOT\_INCREMENTS\{}
+\DoxyCodeLine{76     \mbox{\hyperlink{classMovement}{Movement}}(2,1), \mbox{\hyperlink{classMovement}{Movement}}(2,-\/1),\mbox{\hyperlink{classMovement}{Movement}}(-\/2,1),}
+\DoxyCodeLine{77     \mbox{\hyperlink{classMovement}{Movement}}(-\/2,-\/1), \mbox{\hyperlink{classMovement}{Movement}}(1,2), \mbox{\hyperlink{classMovement}{Movement}}(1,-\/2),}
+\DoxyCodeLine{78     \mbox{\hyperlink{classMovement}{Movement}}(-\/1,2), \mbox{\hyperlink{classMovement}{Movement}}(-\/1,-\/2)}
+\DoxyCodeLine{79   \};}
+\DoxyCodeLine{80 \textcolor{keyword}{public}:}
+\DoxyCodeLine{81   \textcolor{keywordtype}{void} move(\mbox{\hyperlink{classPosition}{Position}} target)\textcolor{keyword}{ override }\{Piece::move(target);\};}
+\DoxyCodeLine{82   std::vector<Position> \mbox{\hyperlink{classKnight_a361e4eced126b52c215ba18c953455fb}{getTreathenedPositions}}(\mbox{\hyperlink{classChessBoard}{ChessBoard}} *board) \textcolor{keyword}{override};}
+\DoxyCodeLine{83   std::vector<Position> getMovablePositions(\mbox{\hyperlink{classChessBoard}{ChessBoard}} *board) \textcolor{keyword}{override};}
+\DoxyCodeLine{84   std::string piece\_symbol() \textcolor{keyword}{override};}
+\DoxyCodeLine{85   \mbox{\hyperlink{classKnight}{Knight}}(\mbox{\hyperlink{classPosition}{Position}} pos, \textcolor{keywordtype}{int} col) : \mbox{\hyperlink{classPiece}{Piece}}(pos, col)\{\};}
+\DoxyCodeLine{86   \mbox{\hyperlink{classKnight}{\string~Knight}}()\{\}}
+\DoxyCodeLine{87 \};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{keyword}{class }\mbox{\hyperlink{classRook}{Rook}}:\textcolor{keyword}{public} \mbox{\hyperlink{classPiece}{Piece}}\{}
+\DoxyCodeLine{90 \textcolor{keyword}{private}:}
+\DoxyCodeLine{91   std::vector<Movement> BEAM\_INCREMENTS\{}
+\DoxyCodeLine{92     \mbox{\hyperlink{classMovement}{Movement}}(0,1), \mbox{\hyperlink{classMovement}{Movement}}(0,-\/1), \mbox{\hyperlink{classMovement}{Movement}}(1,0), \mbox{\hyperlink{classMovement}{Movement}}(-\/1,0)}
+\DoxyCodeLine{93   \};}
+\DoxyCodeLine{94 \textcolor{keyword}{public}:}
+\DoxyCodeLine{95   \textcolor{keywordtype}{void} move(\mbox{\hyperlink{classPosition}{Position}} target)\textcolor{keyword}{ override }\{Piece::move(target);\};}
+\DoxyCodeLine{96   std::vector<Position> \mbox{\hyperlink{classRook_ae292f0c7d186e103839bba6a2f7bab19}{getTreathenedPositions}}(\mbox{\hyperlink{classChessBoard}{ChessBoard}} *board) \textcolor{keyword}{override};}
+\DoxyCodeLine{97   std::vector<Position> getMovablePositions(\mbox{\hyperlink{classChessBoard}{ChessBoard}} *board) \textcolor{keyword}{override};}
+\DoxyCodeLine{98   std::string piece\_symbol() \textcolor{keyword}{override};}
+\DoxyCodeLine{99   \mbox{\hyperlink{classRook}{Rook}}(\mbox{\hyperlink{classPosition}{Position}} pos, \textcolor{keywordtype}{int} col) : \mbox{\hyperlink{classPiece}{Piece}}(pos,col)\{\};}
+\DoxyCodeLine{100   \mbox{\hyperlink{classRook}{\string~Rook}}()\{\}}
+\DoxyCodeLine{101 \};}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{keyword}{class }\mbox{\hyperlink{classBishop}{Bishop}}:\textcolor{keyword}{public} \mbox{\hyperlink{classPiece}{Piece}}\{}
+\DoxyCodeLine{104 \textcolor{keyword}{private}:}
+\DoxyCodeLine{105   std::vector<Movement> BEAM\_INCREMENTS\{}
+\DoxyCodeLine{106     \mbox{\hyperlink{classMovement}{Movement}}(1,1), \mbox{\hyperlink{classMovement}{Movement}}(1,-\/1), \mbox{\hyperlink{classMovement}{Movement}}(-\/1,1), \mbox{\hyperlink{classMovement}{Movement}}(-\/1,-\/1)}
+\DoxyCodeLine{107   \};}
+\DoxyCodeLine{108 \textcolor{keyword}{public}:}
+\DoxyCodeLine{109   \textcolor{keywordtype}{void} move(\mbox{\hyperlink{classPosition}{Position}} target)\textcolor{keyword}{ override }\{Piece::move(target);\};}
+\DoxyCodeLine{110   std::vector<Position> \mbox{\hyperlink{classBishop_aa3e3f956f5444e38a94f0d7cf97e32b9}{getTreathenedPositions}}(\mbox{\hyperlink{classChessBoard}{ChessBoard}} *board) \textcolor{keyword}{override};}
+\DoxyCodeLine{111   std::vector<Position> getMovablePositions(\mbox{\hyperlink{classChessBoard}{ChessBoard}} *board) \textcolor{keyword}{override};}
+\DoxyCodeLine{112   std::string piece\_symbol() \textcolor{keyword}{override};}
+\DoxyCodeLine{113   \mbox{\hyperlink{classBishop}{Bishop}}(\mbox{\hyperlink{classPosition}{Position}} pos, \textcolor{keywordtype}{int} col) : \mbox{\hyperlink{classPiece}{Piece}}(pos,col)\{\};}
+\DoxyCodeLine{114   \mbox{\hyperlink{classBishop}{\string~Bishop}}()\{\}}
+\DoxyCodeLine{115 \};}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{keyword}{class }\mbox{\hyperlink{classPawn}{Pawn}}:\textcolor{keyword}{public} \mbox{\hyperlink{classPiece}{Piece}}\{}
+\DoxyCodeLine{118 \textcolor{keyword}{private}:}
+\DoxyCodeLine{119   std::vector<Movement> SPOT\_INCREMENTS\_MOVE\{\mbox{\hyperlink{classMovement}{Movement}}(0,1)\};}
+\DoxyCodeLine{120   std::vector<Movement> SPOT\_INCREMENTS\_MOVE\_FIRST\{\mbox{\hyperlink{classMovement}{Movement}}(0,1), \mbox{\hyperlink{classMovement}{Movement}}(0,2)\};}
+\DoxyCodeLine{121   std::vector<Movement> SPOT\_INCREMENTS\_TAKE\{\mbox{\hyperlink{classMovement}{Movement}}(-\/1,1), \mbox{\hyperlink{classMovement}{Movement}}(1,1)\};}
+\DoxyCodeLine{122   \textcolor{keywordtype}{bool} moved = \textcolor{keyword}{false};}
+\DoxyCodeLine{123 \textcolor{keyword}{public}:}
+\DoxyCodeLine{124   \textcolor{keywordtype}{void} move(\mbox{\hyperlink{classPosition}{Position}} target) \textcolor{keyword}{override};}
+\DoxyCodeLine{125   std::vector<Position> \mbox{\hyperlink{classPawn_a38e411172c17863469122fdc8020188a}{getTreathenedPositions}}(\mbox{\hyperlink{classChessBoard}{ChessBoard}} *board) \textcolor{keyword}{override};}
+\DoxyCodeLine{126   std::vector<Position> getMovablePositions(\mbox{\hyperlink{classChessBoard}{ChessBoard}} *board) \textcolor{keyword}{override};}
+\DoxyCodeLine{127   std::string piece\_symbol() \textcolor{keyword}{override};}
+\DoxyCodeLine{128   \mbox{\hyperlink{classPawn}{Pawn}}(\mbox{\hyperlink{classPosition}{Position}} pos, \textcolor{keywordtype}{int} col) : \mbox{\hyperlink{classPiece}{Piece}}(pos, col)\{\};}
+\DoxyCodeLine{129   \mbox{\hyperlink{classPawn}{\string~Pawn}}()\{\}}
+\DoxyCodeLine{130 \};}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{keyword}{class }\mbox{\hyperlink{classPieceFactory}{PieceFactory}}\{}
+\DoxyCodeLine{133 \textcolor{keyword}{public}:}
+\DoxyCodeLine{134   \mbox{\hyperlink{classPieceFactory}{PieceFactory}}()\{\};}
+\DoxyCodeLine{135   \mbox{\hyperlink{classPieceFactory}{\string~PieceFactory}}()\{\};}
+\DoxyCodeLine{136   \mbox{\hyperlink{classPiece}{Piece}} *\mbox{\hyperlink{classPieceFactory_a68538ef56290d958d6bc7759464dad5b}{create}}(\textcolor{keywordtype}{int} type, \mbox{\hyperlink{classPosition}{Position}}, \textcolor{keywordtype}{int} color);}
+\DoxyCodeLine{137 \};}
+
+\end{DoxyCode}

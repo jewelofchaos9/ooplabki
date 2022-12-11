@@ -1,0 +1,57 @@
+\hypertarget{game_8h_source}{}\doxysection{game.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}chessboard.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}renderer.h"{}}}
+\DoxyCodeLine{4 \textcolor{keyword}{enum} moves\{}
+\DoxyCodeLine{5   STATUS\_WHITE\_MOVE,}
+\DoxyCodeLine{6   STATUS\_BLACK\_MOVE,}
+\DoxyCodeLine{7   STATUS\_WHITE\_VICTORY,}
+\DoxyCodeLine{8   STATUS\_BLACK\_VICTORY}
+\DoxyCodeLine{9 \};}
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{classPiece}{Piece}};}
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{classChessGameState}{ChessGameState}}\{}
+\DoxyCodeLine{12 \textcolor{keyword}{private}:}
+\DoxyCodeLine{13   std::vector<Piece *> pieces;}
+\DoxyCodeLine{14 \textcolor{keyword}{public}:}
+\DoxyCodeLine{15   \mbox{\hyperlink{classChessGameState}{ChessGameState}}(std::vector<Piece *>pieces)\{}
+\DoxyCodeLine{16     this-\/>pieces = pieces;}
+\DoxyCodeLine{17   \}}
+\DoxyCodeLine{18   std::vector<Piece  *> getPieces()\{}
+\DoxyCodeLine{19     \textcolor{keywordflow}{return} this-\/>pieces;}
+\DoxyCodeLine{20   \}}
+\DoxyCodeLine{21 \};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classRenderer}{Renderer}}\{}
+\DoxyCodeLine{24 \textcolor{keyword}{private}:}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27   \mbox{\hyperlink{classRenderer}{Renderer}}()\{\}}
+\DoxyCodeLine{28   \mbox{\hyperlink{classRenderer}{\string~Renderer}}()\{\}}
+\DoxyCodeLine{29   \textcolor{keywordtype}{void} render(\mbox{\hyperlink{classChessGameState}{ChessGameState}});}
+\DoxyCodeLine{30   \mbox{\hyperlink{classMoveCommand}{MoveCommand}} parse\_command();}
+\DoxyCodeLine{31   \textcolor{keywordtype}{void} error(std::string);}
+\DoxyCodeLine{32   \textcolor{keywordtype}{void} end(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{33 \};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{class }\mbox{\hyperlink{classChessGame}{ChessGame}}\{}
+\DoxyCodeLine{36 \textcolor{keyword}{private}:}
+\DoxyCodeLine{37   \textcolor{keywordtype}{bool} \_finished;}
+\DoxyCodeLine{38   \mbox{\hyperlink{classChessBoard}{ChessBoard}} board;}
+\DoxyCodeLine{39   \mbox{\hyperlink{classRenderer}{Renderer}} renderer;}
+\DoxyCodeLine{40   \textcolor{keywordtype}{int} status;}
+\DoxyCodeLine{41   \textcolor{keywordtype}{bool} \_try\_move(\mbox{\hyperlink{classMoveCommand}{MoveCommand}});}
+\DoxyCodeLine{42 \textcolor{keyword}{public}:}
+\DoxyCodeLine{43   \mbox{\hyperlink{classChessGame}{ChessGame}}(\mbox{\hyperlink{classRenderer}{Renderer}} rend)\{}
+\DoxyCodeLine{44     \_finished = \textcolor{keyword}{false};}
+\DoxyCodeLine{45     board = \mbox{\hyperlink{classChessBoard}{ChessBoard}}();}
+\DoxyCodeLine{46     renderer = rend;}
+\DoxyCodeLine{47     status = STATUS\_WHITE\_MOVE;}
+\DoxyCodeLine{48   \}}
+\DoxyCodeLine{49   \mbox{\hyperlink{classChessGame}{\string~ChessGame}}()\{\}}
+\DoxyCodeLine{50   \mbox{\hyperlink{classChessGameState}{ChessGameState}} getGameState();}
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} run();}
+\DoxyCodeLine{52 \};}
+
+\end{DoxyCode}

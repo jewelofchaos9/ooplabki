@@ -1,0 +1,32 @@
+\hypertarget{chessboard_8h_source}{}\doxysection{chessboard.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}movement.h"{}}}
+\DoxyCodeLine{4 \textcolor{keyword}{class }\mbox{\hyperlink{classPiece}{Piece}};}
+\DoxyCodeLine{5 \textcolor{keyword}{class }\mbox{\hyperlink{classChessBoard}{ChessBoard}}\{}
+\DoxyCodeLine{6 \textcolor{keyword}{private}:}
+\DoxyCodeLine{7   \textcolor{keywordtype}{void} initPieces();}
+\DoxyCodeLine{8   std::vector <Piece *> pieces;}
+\DoxyCodeLine{9   \mbox{\hyperlink{classPosition}{Position}} \_whiteKingPosition;}
+\DoxyCodeLine{10   \mbox{\hyperlink{classPosition}{Position}} \_blackKingPosition;}
+\DoxyCodeLine{11   \textcolor{keywordtype}{int} size = 8;}
+\DoxyCodeLine{12 \textcolor{keyword}{public}:}
+\DoxyCodeLine{13   \mbox{\hyperlink{classChessBoard}{ChessBoard}}();}
+\DoxyCodeLine{14   \mbox{\hyperlink{classChessBoard}{\string~ChessBoard}}();}
+\DoxyCodeLine{15   \mbox{\hyperlink{classChessBoard}{ChessBoard}}(\textcolor{keyword}{const} \mbox{\hyperlink{classChessBoard}{ChessBoard}}\& other);}
+\DoxyCodeLine{16   \mbox{\hyperlink{classPiece}{Piece}} *getPiece(\mbox{\hyperlink{classPosition}{Position}} position);}
+\DoxyCodeLine{17   std::vector <Piece *> getPieces();}
+\DoxyCodeLine{18   \mbox{\hyperlink{classPosition}{Position}} getWhiteKingPosition();}
+\DoxyCodeLine{19   \mbox{\hyperlink{classPosition}{Position}} getBlackKingPosition();}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21   std::vector<Position> beamSearchThreat(\mbox{\hyperlink{classPosition}{Position}} start, \textcolor{keywordtype}{int} own\_color, \textcolor{keywordtype}{int} increment\_x, \textcolor{keywordtype}{int} increment\_y);}
+\DoxyCodeLine{22   \mbox{\hyperlink{classPosition}{Position}} spotSearchThreat(\mbox{\hyperlink{classPosition}{Position}} start, \textcolor{keywordtype}{int} own\_color, \textcolor{keywordtype}{int} increment\_x, \textcolor{keywordtype}{int} increment\_y, \textcolor{keywordtype}{bool} threat\_only = \textcolor{keyword}{false}, \textcolor{keywordtype}{bool} free\_onle = \textcolor{keyword}{false});}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24   \textcolor{keywordtype}{void} executeMove(\mbox{\hyperlink{classMoveCommand}{MoveCommand}} command);}
+\DoxyCodeLine{25   \textcolor{keywordtype}{void} registerKingPosition(\mbox{\hyperlink{classPosition}{Position}}, \textcolor{keywordtype}{int} color);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \};}
+
+\end{DoxyCode}

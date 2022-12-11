@@ -1,0 +1,83 @@
+\hypertarget{classKing}{}\doxysection{King Class Reference}
+\label{classKing}\index{King@{King}}
+Inheritance diagram for King\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classKing}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classKing_a59f9a36243647dff048bc96e72b8f4d6}{set\+Board\+Handle}} (\mbox{\hyperlink{classChessBoard}{Chess\+Board}} $\ast$) override
+\item 
+void \mbox{\hyperlink{classKing_a1f1a36827cf05b1c0313c5c996fc6bfb}{move}} (\mbox{\hyperlink{classPosition}{Position}} target) override
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classPosition}{Position}} $>$ \mbox{\hyperlink{classKing_a15dd996407b7d072943a2b269e93d821}{get\+Treathened\+Positions}} (\mbox{\hyperlink{classChessBoard}{Chess\+Board}} $\ast$board) override
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classPosition}{Position}} $>$ \mbox{\hyperlink{classKing_af2e52b60e8c57ca38c1dff368f9cd22e}{get\+Movable\+Positions}} (\mbox{\hyperlink{classChessBoard}{Chess\+Board}} $\ast$board) override
+\item 
+std\+::string \mbox{\hyperlink{classKing_a2bacad4236df3e905a5d3714dad3e245}{piece\+\_\+symbol}} () override
+\item 
+\mbox{\Hypertarget{classKing_adecee0f59e78cb260fb00c631f7c8cc4}\label{classKing_adecee0f59e78cb260fb00c631f7c8cc4}} 
+{\bfseries King} (\mbox{\hyperlink{classPosition}{Position}} pos, int col)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classKing_af2e52b60e8c57ca38c1dff368f9cd22e}\label{classKing_af2e52b60e8c57ca38c1dff368f9cd22e}} 
+\index{King@{King}!getMovablePositions@{getMovablePositions}}
+\index{getMovablePositions@{getMovablePositions}!King@{King}}
+\doxysubsubsection{\texorpdfstring{getMovablePositions()}{getMovablePositions()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classPosition}{Position}} $>$ King\+::get\+Movable\+Positions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classChessBoard}{Chess\+Board}} $\ast$}]{board }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classPiece}{Piece}}.
+
+\mbox{\Hypertarget{classKing_a15dd996407b7d072943a2b269e93d821}\label{classKing_a15dd996407b7d072943a2b269e93d821}} 
+\index{King@{King}!getTreathenedPositions@{getTreathenedPositions}}
+\index{getTreathenedPositions@{getTreathenedPositions}!King@{King}}
+\doxysubsubsection{\texorpdfstring{getTreathenedPositions()}{getTreathenedPositions()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classPosition}{Position}} $>$ King\+::get\+Treathened\+Positions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classChessBoard}{Chess\+Board}} $\ast$}]{board }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classPiece}{Piece}}.
+
+\mbox{\Hypertarget{classKing_a1f1a36827cf05b1c0313c5c996fc6bfb}\label{classKing_a1f1a36827cf05b1c0313c5c996fc6bfb}} 
+\index{King@{King}!move@{move}}
+\index{move@{move}!King@{King}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void King\+::move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPosition}{Position}}}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classPiece}{Piece}}.
+
+\mbox{\Hypertarget{classKing_a2bacad4236df3e905a5d3714dad3e245}\label{classKing_a2bacad4236df3e905a5d3714dad3e245}} 
+\index{King@{King}!piece\_symbol@{piece\_symbol}}
+\index{piece\_symbol@{piece\_symbol}!King@{King}}
+\doxysubsubsection{\texorpdfstring{piece\_symbol()}{piece\_symbol()}}
+{\footnotesize\ttfamily std\+::string King\+::piece\+\_\+symbol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classPiece}{Piece}}.
+
+\mbox{\Hypertarget{classKing_a59f9a36243647dff048bc96e72b8f4d6}\label{classKing_a59f9a36243647dff048bc96e72b8f4d6}} 
+\index{King@{King}!setBoardHandle@{setBoardHandle}}
+\index{setBoardHandle@{setBoardHandle}!King@{King}}
+\doxysubsubsection{\texorpdfstring{setBoardHandle()}{setBoardHandle()}}
+{\footnotesize\ttfamily void King\+::set\+Board\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classChessBoard}{Chess\+Board}} $\ast$}]{cb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classPiece}{Piece}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+piece.\+h\item 
+piece.\+cpp\end{DoxyCompactItemize}

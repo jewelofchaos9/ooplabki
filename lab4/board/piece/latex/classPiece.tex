@@ -1,0 +1,56 @@
+\hypertarget{classPiece}{}\doxysection{Piece Class Reference}
+\label{classPiece}\index{Piece@{Piece}}
+Inheritance diagram for Piece\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPiece}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPiece_a67fb0744bbb579a8c7e8426e8b8175dc}\label{classPiece_a67fb0744bbb579a8c7e8426e8b8175dc}} 
+{\bfseries Piece} (\mbox{\hyperlink{classPosition}{Position}} pos, int color)
+\item 
+\mbox{\Hypertarget{classPiece_a2dee0ebeffdb733e17574471c441e06d}\label{classPiece_a2dee0ebeffdb733e17574471c441e06d}} 
+\mbox{\hyperlink{classPosition}{Position}} {\bfseries get\+Position} ()
+\item 
+\mbox{\Hypertarget{classPiece_aea7551fe5db16dbe6e4580863f918321}\label{classPiece_aea7551fe5db16dbe6e4580863f918321}} 
+int {\bfseries get\+Color} ()
+\item 
+\mbox{\Hypertarget{classPiece_ab6824bf7b8f614f41013c11b418891da}\label{classPiece_ab6824bf7b8f614f41013c11b418891da}} 
+virtual void {\bfseries move} (\mbox{\hyperlink{classPosition}{Position}} target)
+\item 
+\mbox{\Hypertarget{classPiece_a02c0e58dbf2e96689917676f50baad33}\label{classPiece_a02c0e58dbf2e96689917676f50baad33}} 
+virtual void {\bfseries set\+Board\+Handle} (\mbox{\hyperlink{classChessBoard}{Chess\+Board}} $\ast$board)
+\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{classPosition}{Position}} $>$ \mbox{\hyperlink{classPiece_a9100e630307eeaae194a9b114e5a5e7d}{get\+Treathened\+Positions}} (\mbox{\hyperlink{classChessBoard}{Chess\+Board}} $\ast$board)=0
+\item 
+\mbox{\Hypertarget{classPiece_a8c2e8973001701dcf7df4f75f4ef1ab7}\label{classPiece_a8c2e8973001701dcf7df4f75f4ef1ab7}} 
+virtual std\+::vector$<$ \mbox{\hyperlink{classPosition}{Position}} $>$ {\bfseries get\+Movable\+Positions} (\mbox{\hyperlink{classChessBoard}{Chess\+Board}} $\ast$board)=0
+\item 
+\mbox{\Hypertarget{classPiece_aeb5e3dfd6a4296ae8c37ae006ffd45aa}\label{classPiece_aeb5e3dfd6a4296ae8c37ae006ffd45aa}} 
+std\+::string {\bfseries symbol} ()
+\item 
+\mbox{\Hypertarget{classPiece_a804de5b54a77deaca34496286b1ea5cf}\label{classPiece_a804de5b54a77deaca34496286b1ea5cf}} 
+virtual std\+::string {\bfseries piece\+\_\+symbol} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPiece_a9100e630307eeaae194a9b114e5a5e7d}\label{classPiece_a9100e630307eeaae194a9b114e5a5e7d}} 
+\index{Piece@{Piece}!getTreathenedPositions@{getTreathenedPositions}}
+\index{getTreathenedPositions@{getTreathenedPositions}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{getTreathenedPositions()}{getTreathenedPositions()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$ \mbox{\hyperlink{classPosition}{Position}} $>$ Piece\+::get\+Treathened\+Positions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classChessBoard}{Chess\+Board}} $\ast$}]{board }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classKnight_a361e4eced126b52c215ba18c953455fb}{Knight}}, \mbox{\hyperlink{classRook_ae292f0c7d186e103839bba6a2f7bab19}{Rook}}, \mbox{\hyperlink{classBishop_aa3e3f956f5444e38a94f0d7cf97e32b9}{Bishop}}, and \mbox{\hyperlink{classPawn_a38e411172c17863469122fdc8020188a}{Pawn}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+piece.\+h\item 
+piece.\+cpp\end{DoxyCompactItemize}
